@@ -1,0 +1,7 @@
+<h3>Listing</h3>
+{% for list in listings %}
+<a href="{% url 'retrieve' 3 %}">{{list.title}}</p>
+{% endfor %}
+<br>
+<h3>Form</h3>
+<a href="{% url 'create' %}">Form</a>
