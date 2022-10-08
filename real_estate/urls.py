@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from listing.views import listing_list, listing_retrive, listing_create
+from listing.views import listing_list, listing_retrive, listing_create, listing_update, listing_delete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', listing_list),
     path('listing/<pk>', listing_retrive, name="retrieve"),
+    path('listing/<pk>/edit', listing_update, name="update"),
+    path('listing/<pk>/delete', listing_delete, name="delete"),
     path('add-form', listing_create, name="create")
 
 
