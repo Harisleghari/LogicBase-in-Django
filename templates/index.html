@@ -1,7 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
 <h3>Listing</h3>
 {% for list in listings %}
-<a href="{% url 'retrieve' 3 %}">{{list.title}}</p>
+<div class="px-3 py-2  bg-gray-100 rounded-sm">
+    <h3 class="text-3xl text-gray-900">{{list.title}}</h3>
+    <a href="{% url 'retrieve' 3 %}" class="text-blue-500">view details</a>
+</div>
+
 {% endfor %}
-<br>
-<h3>Form</h3>
 <a href="{% url 'create' %}">Form</a>
+{% endblock content %}
